@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/dashboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/signup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/transcription.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/userProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="add Firebase integration and user authentication features">
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +17,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "xicoooooo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xicoooooo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/xicoooooo/daily-voice-recording.git",
-    "accountId": "b2b6b881-769a-4543-9266-a20300736f6a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/xicoooooo/daily-voice-recording.git&quot;,
+    &quot;accountId&quot;: &quot;b2b6b881-769a-4543-9266-a20300736f6a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -56,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/francisco/Apps/daily-voice-journal",
+    "last_opened_file_path": "/Users/francisco/Apps/daily-voice-recorder",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -90,11 +77,25 @@
       <option name="presentableId" value="Default" />
       <updated>1748272164271</updated>
       <workItem from="1748272165460" duration="66000" />
-      <workItem from="1748272368580" duration="11018000" />
+      <workItem from="1748272368580" duration="11162000" />
+      <workItem from="1748284421388" duration="363000" />
     </task>
+    <task id="LOCAL-00001" summary="add Firebase integration and user authentication features">
+      <option name="closed" value="true" />
+      <created>1748284335361</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748284335361</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Firebase integration and user authentication features" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Firebase integration and user authentication features" />
   </component>
 </project>

@@ -72,7 +72,7 @@ This project requires Firebase configuration. Before running the app:
 
 ## Deployment
 
-The application is deployed on Vercel and can be accessed at [dailyvoicerecorder.vercel.app](https://dailyvoicejournal.vercel.app)
+The application is deployed on Vercel and can be accessed at [daily-voice-recorder.vercel.app](https://daily-voice-recorder.vercel.app/)
 
 ### Deploy your own instance:
 
