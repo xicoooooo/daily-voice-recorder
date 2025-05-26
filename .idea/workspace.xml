@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/microphone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/dashboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/signin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/signup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/transcription.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/userProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "xicoooooo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/xicoooooo/daily-voice-recording.git",
+    "accountId": "b2b6b881-769a-4543-9266-a20300736f6a"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -61,6 +71,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/screenshots" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
@@ -79,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748272164271</updated>
       <workItem from="1748272165460" duration="66000" />
-      <workItem from="1748272368580" duration="3984000" />
+      <workItem from="1748272368580" duration="11018000" />
     </task>
     <servers />
   </component>
