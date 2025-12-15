@@ -1,23 +1,43 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    // ENTRIES
     match /entries/{entryId} {
-      allow read, update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
-      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read, update, delete: if request.auth != null
+        && request.auth.uid == resource.data.userId;
+
+      allow create: if request.auth != null
+        && request.resource.data.userId == request.auth.uid;
     }
 
+    // USERS
     match /users/{userId} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null &&
-                   request.auth.uid == userId &&
-                   request.auth.token.email_verified == true;
+      // User can read own profile
+      allow read: if request.auth != null
+        && request.auth.uid == userId;
+
+      // Allow create BEFORE email verification
+      allow create: if request.auth != null
+        && request.auth.uid == userId;
+
+      // Allow update/delete ONLY after email is verified
+      allow update, delete: if request.auth != null
+        && request.auth.uid == userId
+        && request.auth.token.email_verified == true;
     }
 
-    // For username uniqueness checks
+    // USERNAMES
     match /usernames/{username} {
       allow read: if request.auth != null;
-      allow create, update, delete: if request.auth != null &&
-        request.resource.data.uid == request.auth.uid;
+
+      // Only allow creation if username does NOT exist
+      allow create: if request.auth != null
+        && !exists(/databases/$(database)/documents/usernames/$(username))
+        && request.resource.data.uid == request.auth.uid;
+
+      allow update, delete: if request.auth != null
+        && resource.data.uid == request.auth.uid;
     }
   }
 }
