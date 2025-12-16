@@ -15,9 +15,10 @@ function App() {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+            // Block access until email is verified
             if (currentUser && !currentUser.emailVerified) {
                 await signOut(auth);
-                setError("Please verify your email before logging in.");
+                setError('Please verify your email before logging in.');
                 setLoading(false);
                 return;
             }
@@ -26,36 +27,45 @@ function App() {
 
             if (currentUser) {
                 try {
-                    const userDoc = await getDoc(doc(db, "users", currentUser.uid));
-                    if (userDoc.exists()) {
-                        setUserProfile(userDoc.data());
+                    const userRef = doc(db, 'users', currentUser.uid);
+                    const userSnap = await getDoc(userRef);
 
-                        if (userDoc.data().emailVerified !== currentUser.emailVerified) {
-                            await setDoc(doc(db, "users", currentUser.uid), {
-                                ...userDoc.data(),
-                                emailVerified: currentUser.emailVerified
-                            }, { merge: true });
-                        }
-                    } else {
-                        const defaultProfile = {
-                            username: currentUser.email.split('@')[0],
+                    // User does not have a profile yet → create one
+                    if (!userSnap.exists()) {
+                        const baseUsername = currentUser.email.split('@')[0];
+                        const username = `${baseUsername}_${currentUser.uid.slice(0, 5)}`;
+
+                        const profile = {
+                            username,
                             email: currentUser.email,
                             emailVerified: currentUser.emailVerified,
                             createdAt: new Date()
                         };
 
-                        await setDoc(doc(db, "users", currentUser.uid), defaultProfile);
+                        await setDoc(userRef, profile);
 
-                        // Also create username reference for uniqueness
-                        await setDoc(doc(db, "usernames", defaultProfile.username.toLowerCase()), {
+                        // Create username reference (for uniqueness)
+                        await setDoc(doc(db, 'usernames', username.toLowerCase()), {
                             uid: currentUser.uid,
-                            username: defaultProfile.username.toLowerCase()
+                            username: username.toLowerCase()
                         });
 
-                        setUserProfile(defaultProfile);
+                        setUserProfile(profile);
+                    } else {
+                        const data = userSnap.data();
+                        setUserProfile(data);
+
+                        // Update emailVerified flag only once (false → true)
+                        if (!data.emailVerified && currentUser.emailVerified) {
+                            await setDoc(
+                                userRef,
+                                { emailVerified: true },
+                                { merge: true }
+                            );
+                        }
                     }
-                } catch (error) {
-                    console.error("Error fetching user profile:", error);
+                } catch (err) {
+                    console.error('Error fetching user profile:', err);
                 }
             }
 
@@ -65,8 +75,8 @@ function App() {
         return unsubscribe;
     }, []);
 
-    const handleLogout = () => {
-        signOut(auth);
+    const handleLogout = async () => {
+        await signOut(auth);
         setUserProfile(null);
         setError('');
     };
@@ -78,7 +88,7 @@ function App() {
     if (loading) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-100">
-                <div className="animate-spin w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full"></div>
+                <div className="animate-spin w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full" />
             </div>
         );
     }
@@ -87,13 +97,16 @@ function App() {
         <div>
             {user ? (
                 <>
+                    {/* Header */}
                     <div className="bg-white/70 backdrop-blur-sm border-b border-white/20 sticky top-0 z-10">
                         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
                             <div>
                                 <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                                     Daily Voice Recorder
                                 </h1>
-                                <p className="text-gray-600 mt-1">Speak your thoughts, capture your moments</p>
+                                <p className="text-gray-600 mt-1">
+                                    Speak your thoughts, capture your moments
+                                </p>
                             </div>
                             <div className="flex items-center gap-4">
                                 <button
@@ -112,6 +125,7 @@ function App() {
                         </div>
                     </div>
 
+                    {/* Profile Modal */}
                     {showProfileModal && (
                         <UserProfile
                             user={user}

@@ -1,39 +1,34 @@
 import React, { useState } from 'react';
-import { auth, db } from './firebase';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, signOut } from 'firebase/auth';
-import { setDoc, doc, collection, query, where, getDocs } from 'firebase/firestore';
+import { auth } from './firebase';
+import {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+    signOut
+} from 'firebase/auth';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
     const [isSignUp, setIsSignUp] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const checkUsernameAvailability = async (username) => {
-        const usernamesRef = collection(db, "usernames");
-        const q = query(usernamesRef, where("username", "==", username.toLowerCase()));
-        const querySnapshot = await getDocs(q);
-        return querySnapshot.empty;
-    };
-
     const resendVerificationEmail = async () => {
-        if (!email) {
-            setError("Please enter your email address first");
+        if (!email || !password) {
+            setError('Please enter your email and password first.');
             return;
         }
 
         setLoading(true);
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            await sendEmailVerification(userCredential.user);
-            setSuccess("Verification email sent! Please check your inbox.");
-
+            const cred = await signInWithEmailAndPassword(auth, email, password);
+            await sendEmailVerification(cred.user);
+            setSuccess('Verification email sent! Please check your inbox.');
             await signOut(auth);
-        } catch (error) {
-            setError("Couldn't send verification email. Please check your credentials.");
+        } catch {
+            setError('Could not resend verification email. Please check your credentials.');
         } finally {
             setLoading(false);
         }
@@ -47,42 +42,25 @@ const Login = () => {
 
         try {
             if (isSignUp) {
-                if (!username.trim() || username.length < 3) {
-                    throw new Error("Username must be at least 3 characters long");
-                }
+                const cred = await createUserWithEmailAndPassword(auth, email, password);
+                await sendEmailVerification(cred.user);
 
-                const isAvailable = await checkUsernameAvailability(username);
-                if (!isAvailable) {
-                    throw new Error("Username is already taken");
-                }
-
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-                await sendEmailVerification(userCredential.user);
-
-                await setDoc(doc(db, "users", userCredential.user.uid), {
-                    username: username,
-                    email: email,
-                    emailVerified: false,
-                    createdAt: new Date()
-                });
-
-                await setDoc(doc(db, "usernames", username.toLowerCase()), {
-                    uid: userCredential.user.uid,
-                    username: username.toLowerCase()
-                });
-
-                setSuccess("Verification email sent! Please check your inbox and verify your email before logging in.");
-            } else {
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
-
-                if (!userCredential.user.emailVerified) {
-                    await sendEmailVerification(userCredential.user);
-                    throw new Error("Please verify your email before logging in. A new verification email has been sent.");
-                }
+                setSuccess(
+                    'Verification email sent! Please check your inbox and verify your email before logging in.'
+                );
+                return;
             }
-        } catch (error) {
-            setError(error.message);
+
+            const cred = await signInWithEmailAndPassword(auth, email, password);
+
+            if (!cred.user.emailVerified) {
+                await sendEmailVerification(cred.user);
+                throw new Error(
+                    'Please verify your email before logging in. A new verification email has been sent.'
+                );
+            }
+        } catch (err) {
+            setError(err.message);
         } finally {
             setLoading(false);
         }
@@ -98,7 +76,7 @@ const Login = () => {
                 {error && (
                     <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
                         {error}
-                        {error.includes("verify your email") && (
+                        {error.includes('verify your email') && (
                             <button
                                 onClick={resendVerificationEmail}
                                 className="ml-2 text-blue-600 hover:text-blue-800 underline"
@@ -116,22 +94,6 @@ const Login = () => {
                 )}
 
                 <form onSubmit={handleAuth}>
-                    {isSignUp && (
-                        <div className="mb-4">
-                            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="username">
-                                Username
-                            </label>
-                            <input
-                                id="username"
-                                type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                className="w-full px-4 py-2 border border-purple-200 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent"
-                                required
-                            />
-                        </div>
-                    )}
-
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
                             Email

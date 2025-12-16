@@ -29,7 +29,7 @@ service cloud.firestore {
 
     // USERNAMES
     match /usernames/{username} {
-      allow read: if request.auth != null;
+      allow read: if true;
 
       // Only allow creation if username does NOT exist
       allow create: if request.auth != null
