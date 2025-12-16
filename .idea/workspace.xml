@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="patch 1.0">
+      <change afterPath="$PROJECT_DIR$/src/ConfirmModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firestore.rules" beforeDir="false" afterPath="$PROJECT_DIR$/firestore.rules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/screenshots" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
@@ -85,7 +87,7 @@
       <workItem from="1748355537931" duration="183000" />
       <workItem from="1748484031786" duration="58000" />
       <workItem from="1765824690999" duration="1101000" />
-      <workItem from="1765841666784" duration="2709000" />
+      <workItem from="1765841666784" duration="11636000" />
     </task>
     <task id="LOCAL-00001" summary="add Firebase integration and user authentication features">
       <option name="closed" value="true" />

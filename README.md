@@ -93,18 +93,22 @@ REACT_APP_FIREBASE_MEASUREMENT_ID=your-measurement-id
 
 ## How It Works
 
-1. **Sign up/Sign in** - Create an account with email verification
-2. **Record your voice** - Click the microphone button and start speaking
-3. **Review and save** - The app transcribes your speech in real-time
-4. **Translate** - Select from multiple languages to translate your entries
-5. **Access anywhere** - Your entries are securely stored in the cloud
+1. **Sign up/Sign in** - Create an account with email verification.
+2. **Record your voice** - Click the microphone button and start speaking.
+3. **Review and save** - The app transcribes your speech in real-time.
+4. **Translate** - Select from multiple languages to translate your entries.
+5. **Access anywhere** - Your entries are securely stored in the cloud.
+6. **Manage entries** - Edit, delete, paginate, and browse your journal history. 
+7. **Translate** - Translate any entry into another language without altering the original.
 
 ## Privacy & Security
 
-- All user data is stored in Firebase Firestore with secure rules
-- Authentication requires email verification
-- Entries are only accessible to the user who created them
-- No third-party has access to your entries content
+- All user data is stored in Firebase Firestore with secure rules.
+- Authentication requires email verification.
+- Entries are only accessible to the user who created them.
+- No third-party has access to your entries content.
+- Translations are performed only when explicitly requested.
+
 
 ## Pull Requests
 
