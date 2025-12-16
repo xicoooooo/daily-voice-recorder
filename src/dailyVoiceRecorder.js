@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Mic, MicOff, Save, Calendar, Clock, Trash2, Globe } from 'lucide-react';
 import { db } from './firebase';
 import { collection, addDoc, query, where, getDocs, deleteDoc, doc, updateDoc, orderBy, limit, startAfter } from 'firebase/firestore';
@@ -40,7 +40,7 @@ const DailyVoiceRecorder = ({ user }) => {
         localStorage.setItem('preferredLanguage', language);
     }, [language]);
 
-    const loadTotalEntriesCount = async () => {
+    const loadTotalEntriesCount = useCallback(async () => {
         if (!user) return;
 
         try {
@@ -54,9 +54,9 @@ const DailyVoiceRecorder = ({ user }) => {
         } catch (error) {
             console.error("Failed to load entries count:", error);
         }
-    };
+    }, [user]);
 
-    const loadEntries = async (loadMore = false) => {
+    const loadEntries = useCallback(async (loadMore = false) => {
         if (!user || loadingMore) return;
 
         loadMore ? setLoadingMore(true) : setLoading(true);
@@ -93,20 +93,19 @@ const DailyVoiceRecorder = ({ user }) => {
 
             setLastDoc(snapshot.docs[snapshot.docs.length - 1] || null);
             setHasMore(snapshot.docs.length === PAGE_SIZE);
-            const noMorePages = snapshot.docs.length < PAGE_SIZE;
-            setShowAll(loadMore && noMorePages);
+            setShowAll(loadMore && snapshot.docs.length < PAGE_SIZE);
         } catch (error) {
             setError(`Error loading entries: ${error.message}`);
         } finally {
             setLoading(false);
             setLoadingMore(false);
         }
-    };
+    }, [user, loadingMore, lastDoc]);
 
     useEffect(() => {
         loadEntries(false);
         loadTotalEntriesCount();
-    }, [user]);
+    }, [user, loadEntries, loadTotalEntriesCount]);
 
     const improveCapitalization = (text) => {
         let improved = text.charAt(0).toUpperCase() + text.slice(1);

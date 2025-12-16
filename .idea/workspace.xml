@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="patch 1.0">
-      <change afterPath="$PROJECT_DIR$/src/ConfirmModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features">
       <change beforePath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +21,12 @@
     &quot;assignee&quot;: &quot;xicoooooo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/xicoooooo/daily-voice-recording.git&quot;,
-    &quot;accountId&quot;: &quot;b2b6b881-769a-4543-9266-a20300736f6a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/xicoooooo/daily-voice-recorder.git",
+    "accountId": "b2b6b881-769a-4543-9266-a20300736f6a"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -87,7 +83,7 @@
       <workItem from="1748355537931" duration="183000" />
       <workItem from="1748484031786" duration="58000" />
       <workItem from="1765824690999" duration="1101000" />
-      <workItem from="1765841666784" duration="11636000" />
+      <workItem from="1765841666784" duration="11939000" />
     </task>
     <task id="LOCAL-00001" summary="add Firebase integration and user authentication features">
       <option name="closed" value="true" />
@@ -121,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765825789111</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features">
+      <option name="closed" value="true" />
+      <created>1765854775861</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765854775861</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +136,8 @@
     <MESSAGE value="update application description and fix deployment URL in README" />
     <MESSAGE value="add project configuration files for Firebase integration and Firestore rules" />
     <MESSAGE value="patch 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="patch 1.0" />
+    <MESSAGE value="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features" />
+    <option name="LAST_COMMIT_MESSAGE" value="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
