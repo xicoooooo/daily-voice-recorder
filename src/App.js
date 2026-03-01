@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-            // Block access until email is verified
+            // block access until email is verified
             if (currentUser && !currentUser.emailVerified) {
                 await signOut(auth);
                 setError('Please verify your email before logging in.');
@@ -30,7 +30,7 @@ function App() {
                     const userRef = doc(db, 'users', currentUser.uid);
                     const userSnap = await getDoc(userRef);
 
-                    // User does not have a profile yet → create one
+                    // user does not have a profile yet → create one
                     if (!userSnap.exists()) {
                         const baseUsername = currentUser.email.split('@')[0];
                         const username = `${baseUsername}_${currentUser.uid.slice(0, 5)}`;
@@ -44,7 +44,7 @@ function App() {
 
                         await setDoc(userRef, profile);
 
-                        // Create username reference (for uniqueness)
+                        // create username reference (for uniqueness)
                         await setDoc(doc(db, 'usernames', username.toLowerCase()), {
                             uid: currentUser.uid,
                             username: username.toLowerCase()
@@ -55,7 +55,7 @@ function App() {
                         const data = userSnap.data();
                         setUserProfile(data);
 
-                        // Update emailVerified flag only once (false → true)
+                        // update emailVerified flag only once (false → true)
                         if (!data.emailVerified && currentUser.emailVerified) {
                             await setDoc(
                                 userRef,

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features">
-      <change beforePath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dailyVoiceRecorder.js" afterDir="false" />
+    <list default="true" id="cac5e92c-718e-42c0-876c-75763926dfc2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +21,12 @@
     &quot;assignee&quot;: &quot;xicoooooo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/xicoooooo/daily-voice-recorder.git",
-    "accountId": "b2b6b881-769a-4543-9266-a20300736f6a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/xicoooooo/daily-voice-recorder.git&quot;,
+    &quot;accountId&quot;: &quot;b2b6b881-769a-4543-9266-a20300736f6a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -35,26 +35,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/francisco/Apps/daily-voice-recorder&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/Users/francisco/Apps/daily-voice-recorder",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
@@ -65,7 +67,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28539.21" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-WS-253.28294.332" />
       </set>
     </attachedChunks>
   </component>
@@ -83,7 +85,9 @@
       <workItem from="1748355537931" duration="183000" />
       <workItem from="1748484031786" duration="58000" />
       <workItem from="1765824690999" duration="1101000" />
-      <workItem from="1765841666784" duration="11939000" />
+      <workItem from="1765841666784" duration="12055000" />
+      <workItem from="1765899253043" duration="157000" />
+      <workItem from="1765899467376" duration="648000" />
     </task>
     <task id="LOCAL-00001" summary="add Firebase integration and user authentication features">
       <option name="closed" value="true" />
@@ -125,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765854775861</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="patch 1.1v2: &#10;1. dailyVoiceRecorder to use useCallback for optimized performance">
+      <option name="closed" value="true" />
+      <created>1765855124976</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765855124976</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +149,8 @@
     <MESSAGE value="add project configuration files for Firebase integration and Firestore rules" />
     <MESSAGE value="patch 1.0" />
     <MESSAGE value="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features" />
-    <option name="LAST_COMMIT_MESSAGE" value="patch 1.1:&#10;1. add ConfirmModal component&#10;2. enhance entry management features" />
+    <MESSAGE value="patch 1.1v2: &#10;1. dailyVoiceRecorder to use useCallback for optimized performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="patch 1.1v2: &#10;1. dailyVoiceRecorder to use useCallback for optimized performance" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
